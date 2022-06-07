@@ -1,0 +1,68 @@
+---
+# Additional page configuration
+
+# Additional configurations are loaded using its file name, minus the extension, as an anchor (https://<mydashboad>#<config>). 
+# `config.yml` is still used as a base configuration, and all values here will overwrite it, so you don't have to re-defined everything
+
+
+subtitle: "LAN"
+
+# This overwrites message config. Setting it to empty to remove message from this page and keep it only in the main one:
+message:
+  #url: https://b4bz.io
+  style: "is-danger" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  title: "Hello, this is Haruka !"
+  icon: "fa fa-grin"
+  content: "These services can only visited in the LAN area"
+
+# as we want to include a differente link here (so we can get back to home page), we need to replicate all links or they will be revome when overwriting the links field:
+links:
+  - name: "Github"
+    icon: "fab fa-github"
+    url: "https://github.com/weijunji"
+    target: "_blank" # optional html a tag target attribute
+  - name: "Blog"
+    icon: "fas fa-book"
+    url: "https://haruka.gay/"
+  - name: "Home"
+    icon: "fas fa-home"
+    url: "#"
+
+services:
+  - name: "Management"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Portainer"
+        logo: "assets/tools/docker.png"
+        subtitle: "Docker management"
+        tag: "app"
+        url: "https://192.168.2.99:9443/"
+        target: "_blank"
+      - name: "AriaNg"
+        logo: "assets/tools/AriaNg.ico"
+        subtitle: "Download management"
+        tag: "app"
+        url: "http://192.168.2.99:6880/"
+        target: "_blank"
+      - name: "Flexget"
+        logo: "assets/tools/flexget.png"
+        subtitle: "RSS Download"
+        tag: "app"
+        url: "http://192.168.2.99:5050/"
+        target: "_blank"
+      - name: "Netdata"
+        logo: "data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9JREFUeNpiYBgFo+A/w34gpiZ8DzWzAYgNiHGAA5UdgA73g+2gcyhgg/0DGQoweB6IBQYyFCCOGOBQwBMd/xnW09ERDtgcoEBHB+zHFQrz6egIBUasocDAcJ9OxWAhE4YQI8MDILmATg7wZ8QRDfQKhQf4Cie6pAVGPA4AhQKo0BCgZRAw4ZSBpIWJNI6CD4wEKikBaFqgVSgcYMIrzcjwgcahcIGRiPYCLUPBkNhWUwP9akVcoQBpatG4MsLviAIqWj6f3Absfdq2igg7IIEKDVQKEzN5ofAenJCp1I8gJRTug5tfkGIdR1FDniMI+QZUjF8Amn5htOdHCAAEGACE6B0cS6mrEwAAAABJRU5ErkJggg=="
+        subtitle: "Server Monitor"
+        tag: "app"
+        url: "http://192.168.2.99:19999/"
+        target: "_blank"
+
+  - name: "Media"
+    icon: "fas fa-film"
+    items:
+      - name: "Jellyfin"
+        logo: "assets/tools/jellyfin.png"
+        subtitle: "Media System"
+        tag: "media"
+        url: "http://192.168.2.99:8096/"
+        target: "_blank"
